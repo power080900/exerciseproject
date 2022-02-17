@@ -1,0 +1,19 @@
+{% extends 'basesimple.html' %}
+
+{% block mycss %}
+  img {
+    width : 200px;
+    height : 200px;
+  }
+{% endblock %}
+{% block mycontent %}
+    <h1>인터페이스 개발 팀 프로젝트</h1>
+    <hr>
+    <h2>{{type}}</h2>
+    <ul>
+        {% for member in members %}
+        <li>{{member}}</li>
+        {% endfor %}
+    </ul>
+    <img src="{{image}}">
+{% endblock %}
