@@ -34,4 +34,18 @@ def exercise2(request):
             'type': type,
             'image': image,
     }
-    return render(request, 'exercise2.html',context)
+    return render(request, 'exercise2.html', context)
+
+
+def exercise3(request):
+    context = None
+    if request.method == 'POST':
+        writer = request.POST.get("writer"," ")
+        memo = request.POST.get("memo"," ")
+        context = {
+            'info':{
+                'info1' : writer,
+                'info2' : memo,
+                }
+            }
+    return render(request, 'exercise3.html', context)
