@@ -33,6 +33,5 @@ def exercise2(request):
         context = {
             'type': type,
             'image': image,
-
     }
     return render(request, 'exercise2.html',context)
