@@ -55,10 +55,10 @@ def product1(request):
     herfs2 = []
     images2 = []
     for i in range(1,6):
-        herfs1.append("/workapp/basket1/?pid="+str(i))
+        herfs1.append("/workapp/product1/?pid="+str(i))
         images1.append("/static/images/"+str(i)+".jpg")
     for i in range(5,11):
-        herfs2.append("/workapp/basket1/?pid="+str(i))
+        herfs2.append("/workapp/product1/?pid="+str(i))
         images2.append("/static/images/"+str(i)+".jpg")
     context = {
         'herfs1' : herfs1,
