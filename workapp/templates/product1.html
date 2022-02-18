@@ -7,32 +7,20 @@
     border : 1px solid;
     box-shadow : 2px 2px 5px 8px grey;
   }
-
+  a {
+    padding : 30px 0 25px;
+    }
 {% endblock %}
 {% block mycontent %}
     <h1>원하는 상품을 클릭해 주세요!!!</h1>
     <hr>
     <figure>
-        <a href="/workapp/basket1/?pid=1">
-            <img src="/static/images/1.jpg"></a>
-        <a href="/workapp/basket1/?pid=2">
-            <img src="/static/images/2.jpg"></a>
-        <a href="/workapp/basket1/?pid=3">
-            <img src="/static/images/3.jpg"></a>
-        <a href="/workapp/basket1/?pid=4">
-            <img src="/static/images/4.jpg"></a>
-        <a href="/workapp/basket1/?pid=5">
-            <img src="/static/images/5.jpg"></a>
+        {% for i in list1 %}
+        <a href="/workapp/basket1/?pid={{i}}"><img src="/static/images/{{i}}.jpg"></a>
+        {% endfor %}
         <br>
-        <a href="/workapp/basket1/?pid=6">
-            <img src="/static/images/6.jpg"></a>
-        <a href="/workapp/basket1/?pid=7">
-            <img src="/static/images/7.jpg"></a>
-        <a href="/workapp/basket1/?pid=8">
-            <img src="/static/images/8.jpg"></a>
-        <a href="/workapp/basket1/?pid=9">
-            <img src="/static/images/9.jpg"></a>
-        <a href="/workapp/basket1/?pid=10">
-            <img src="/static/images/10.jpg"></a>
+        {% for i in list2 %}
+        <a href="/workapp/basket1/?pid={{i}}"><img src="/static/images/{{i}}.jpg"></a>
+        {% endfor %}
     </figure>
 {% endblock %}
