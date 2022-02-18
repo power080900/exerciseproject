@@ -1,0 +1,15 @@
+{% extends 'basesimple.html' %}
+
+{% block mycss %}
+  img {
+    width : 150px;
+    height : 150px;
+  }
+
+{% endblock %}
+{% block mycontent %}
+<h1>요청시간 : {{ current_date|date:"Y년 m월 d일 H시 i분 s초" }}</h1>
+<h2>선택된 상품: </h2><br>
+<img src="{{goods}}">
+<a href="{{request.headers.referer}}">상품 선택 화면으로</a>
+{% endblock %}
