@@ -50,21 +50,16 @@ def exercise3(request):
     return render(request, 'exercise3.html', context)
 
 def product1(request):
-    herfs1 = ["/workapp/product1/?pid=1","/workapp/product1/?pid=2"]
-    images1 = ["/static/images/1.jpg","/static/images/2.jpg"]
-    herfs2 = ["/workapp/product1/?pid=3", "/workapp/product1/?pid=4"]
-    images2 = ["/static/images/3.jpg","/static/images/4.jpg"]
-    # for i in range(5):
-    #     herfs1 = "/workapp/basket1/?pid=",i
-    #     images1 = "/static/images/",i,".jpg"
-    # for i in range(5,11):
-    #     herfs2 = "/workapp/basket1/?pid=",i
-    #     images2 = "/static/images/",i,".jpg"
+    hrefs = []
+    images = []
+    for i in range(1, 11):
+        href = ["/workapp/basket1/?pid=" + str(i)]
+        image = ["/static/images/" +str(i)+ ".jpg"]
+        hrefs += href
+        images += image
     context = {
-        'herfs1' : herfs1,
-        'herfs2': herfs2,
-        'images1' : images1,
-        'images2' : images2,
+        'hrefs' : hrefs,
+        'images': images,
     }
     return render(request, 'product1.html', context)
 
