@@ -12,21 +12,11 @@
 {% block mycontent %}
     <h1>원하는 상품을 클릭해 주세요!!!</h1>
     <hr>
-    <div>
-        {%for href1 in hrefs1%}
-        <a href="href1">
-            {% endfor %}
-            {% for image1 in images1 %}
-            <img src="image1">
-            {% endfor %}
-        </a>
-        <br>
-        {%for href2 in hrefs2%}
-        <a href="href2">
-            {% endfor %}
-            {% for image2 in images2 %}
-            <img src="image2">
-            {% endfor %}
-        </a>
-    </div>
+        {% for num in hrefs %}
+           <a href={{num}}>
+        {% endfor %}
+        {% for num1 in images %}
+            <img src={{num1}}>
+        {% endfor %}
+           </a>
 {% endblock %}
