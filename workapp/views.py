@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from datetime import datetime
+import datetime
 
 # Create your views here.
 def exercise1(request):
@@ -50,16 +50,16 @@ def exercise3(request):
     return render(request, 'exercise3.html', context)
 
 def product1(request):
-    herfs1 = ["/workapp/product1/?pid=1","/workapp/product1/?pid=2"]
-    images1 = ["/static/images/1.jpg","/static/images/2.jpg"]
-    herfs2 = ["/workapp/product1/?pid=3", "/workapp/product1/?pid=4"]
-    images2 = ["/static/images/3.jpg","/static/images/4.jpg"]
-    # for i in range(5):
-    #     herfs1 = "/workapp/basket1/?pid=",i
-    #     images1 = "/static/images/",i,".jpg"
-    # for i in range(5,11):
-    #     herfs2 = "/workapp/basket1/?pid=",i
-    #     images2 = "/static/images/",i,".jpg"
+    herfs1 = []
+    images1 = []
+    herfs2 = []
+    images2 = []
+    for i in range(5):
+        herfs1 = "/workapp/basket1/?pid="+str(i)
+        images1 = "/static/images/"+str(i)+".jpg"
+    for i in range(5,11):
+        herfs2 = "/workapp/basket1/?pid="+str(i)
+        images2 = "/static/images/"+str(i)+".jpg"
     context = {
         'herfs1' : herfs1,
         'herfs2': herfs2,
@@ -69,7 +69,7 @@ def product1(request):
     return render(request, 'product1.html', context)
 
 def basket1(request):
-    dt = datetime.now()
+    dt = datetime.datetime.now()
     i = request.GET.get("pid")
     goods = "/static/images/"+i+".jpg"
     context = {

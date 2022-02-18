@@ -17,7 +17,7 @@
     <hr>
     <form method="post" action="http://localhost:8000/workapp/exercise3/">
         {% csrf_token %}
-        <textarea placeholder="작성자 이름을 입력하세요" name="writer" rows="1" cols="30"></textarea>
+        <input type="text" placeholder="작성자 이름을 입력하세요" name="writer" rows="1" cols="30"></input>
         <br>
         <br>
         <textarea placeholder="자신의 의견을 간단히 작성하세요" name="memo" rows="5" cols="50"></textarea>

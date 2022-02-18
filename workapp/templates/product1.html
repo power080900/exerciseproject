@@ -14,18 +14,18 @@
     <hr>
     <div>
         {%for href1 in hrefs1%}
-        <a href="href1">
+        <a href="{{href1}}">
             {% endfor %}
             {% for image1 in images1 %}
-            <img src="image1">
+            <img src="{{image1}}">
             {% endfor %}
         </a>
         <br>
         {%for href2 in hrefs2%}
-        <a href="href2">
+        <a href="{{href2}}">
             {% endfor %}
             {% for image2 in images2 %}
-            <img src="image2">
+            <img src="{{image2}}">
             {% endfor %}
         </a>
     </div>
