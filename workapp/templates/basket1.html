@@ -5,7 +5,9 @@
     width : 150px;
     height : 150px;
   }
-
+  a {
+    text-decoration : none;
+  }
 {% endblock %}
 {% block mycontent %}
 <h1>요청시간 : {{ current_date|date:"Y년 m월 d일 H시 i분 s초" }}</h1>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from datetime import datetime
+import datetime
 
 # Create your views here.
 def exercise1(request):
@@ -50,21 +50,14 @@ def exercise3(request):
     return render(request, 'exercise3.html', context)
 
 def product1(request):
-    hrefs = []
-    images = []
-    for i in range(1, 11):
-        href = ["/workapp/basket1/?pid=" + str(i)]
-        image = ["/static/images/" +str(i)+ ".jpg"]
-        hrefs += href
-        images += image
     context = {
-        'hrefs' : hrefs,
-        'images': images,
+        'list1' : [1,2,3,4,5],
+        'list2' : [6,7,8,9,10],
     }
     return render(request, 'product1.html', context)
 
 def basket1(request):
-    dt = datetime.now()
+    dt = datetime.datetime.now()
     i = request.GET.get("pid")
     goods = "/static/images/"+i+".jpg"
     context = {
